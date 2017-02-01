@@ -7,8 +7,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, DB, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, vcl.DBCtrls, dbtables,
-  Menus, DBGrids, siComp, FireDAC.Comp.Client,
+  Vcl.Controls, Vcl.Forms, DB, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, vcl.DBCtrls,
+  Menus, DBGrids, FireDAC.Comp.Client,
 
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
   FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
@@ -30,7 +30,11 @@ uses
   dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine, dxSkinVS2010,
-  dxSkinWhiteprint, dxSkinXmas2008Blue, cxButtons, Vcl.ImgList;
+  dxSkinWhiteprint, dxSkinXmas2008Blue, cxButtons, Vcl.ImgList,
+  dxSkinMetropolis, dxSkinMetropolisDark, dxSkinOffice2013DarkGray,
+  dxSkinOffice2013LightGray, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, System.ImageList;
 
 
 type
@@ -58,7 +62,6 @@ type
     Adiciona1: TMenuItem;
     Modifica1: TMenuItem;
     Exclui1: TMenuItem;
-    siLang_F_DetailGrid5: TsiLang;
     Imagens: TImageList;
     b_Novo: TcxButton;
     b_Grava: TcxButton;
@@ -108,7 +111,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DATAMASTER, U_DataModule_Library;
+uses unRegrasDataModule, U_DataModule_Library;
 
 { TF_DetailGrid5 }
 
@@ -130,23 +133,6 @@ end;
 procedure TF_DetailGrid5.AlteraRegistro(var MTable: TFDQuery);
 begin
     MainTable := MTable;
-
-    //Pesquisa Permissões
-//    with TQuery.Create(Self) do
-//    try
-//       DatabaseName := 'Data_Base';
-//       SQL.Add('SELECT NVL(sigma.pkg_sigma.get_NO_INSERT,0) NO_INSERT, NVL(sigma.pkg_sigma.get_NO_UPDATE,0) NO_UPDATE, NVL(sigma.pkg_sigma.get_NO_DELETE,0) NO_DELETE from DUAL');
-//       Open;
-//
-//       NO_Insert := (FieldByName('NO_INSERT').AsInteger = 1);
-//       NO_Update := (FieldByName('NO_UPDATE').AsInteger = 1);
-//       NO_Delete := (FieldByName('NO_DELETE').AsInteger = 1);
-//       Free;
-//    except
-//	  Free;
-//	  Raise;
-//    end;
-
    //se entrou para alterar e não possui permissão ajustar objetos
     if Addr(Self.OnShow) = nil then
        Self.OnShow := SavedObjects[0].OnShow;

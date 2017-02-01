@@ -25,7 +25,10 @@ uses
   FireDAC.Stan.Async, FireDAC.Comp.ScriptCommands, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, dxSkinMetropolis, dxSkinMetropolisDark,
+  dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray, dxSkinOffice2016Colorful,
+  dxSkinOffice2016Dark, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, FireDAC.Stan.Util;
 
 type
   TF_CarregaDados = class(TForm)
@@ -52,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DataModule_Library, unMenu, U_DATAMASTER;
+uses U_DataModule_Library, unMenu, unRegrasDataModule, unRotinas;
 
 procedure TF_CarregaDados.CarregaConstraint;
 var Lista2 : TListBox;

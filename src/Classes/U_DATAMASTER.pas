@@ -8,7 +8,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Buttons, ToolWin, ComCtrls, DBTables, Menus, DBGrids, Db, Extctrls, stdctrls, dbctrls,
+  Buttons, ToolWin, ComCtrls, Menus, DBGrids, Db, Extctrls, stdctrls, dbctrls,
   cxRadioGroup, cxDBEdit, cxCalendar, cxGrid, variants,ShellApi,ShlObj,FireDAC.Comp.Client,
   FireDAC.Comp.DataSet, StrUtils, Tlhelp32;
 //  cxExportGrid4Link
@@ -29,12 +29,12 @@ procedure Registra_Log(var log:string; action:string; form: string);
 procedure TecleGrid(Sender: TObject; var Key: Char);
 function  Sequence(Nome_Sequence : string): real;
 function  Ultimo_Valor(Campo : string; Tabela:string): real;
-procedure Refresh_Query(var QryTmp : TQuery; sChave : string);
+procedure Refresh_Query(var QryTmp : TFDQuery; sChave : string);
 function descricao_mes(mes : byte): String;
 procedure AtivaDesativa(Controle : TWinControl; Status : boolean);
 function ultimo_dia_util:TDate;
 function ultimo_dia_util_mes(Data:TDate):TDate;
-procedure SubstTextoSQL(var TSQL : TQuery; old : string; new : string);
+procedure SubstTextoSQL(var TSQL : TFDQuery; old : string; new : string);
 function DateServer : TDateTime;
 function StringSQL(TS : TStrings) : string;
 function UserRole(ROLE : string) : boolean;
@@ -47,7 +47,7 @@ Procedure Desformata_CGC(var CGC:string);
 function ReplaceStr(const S, Srch, Replace: string): string;
 function StringObservacao(s : string) : string;
 function Valida_Inscricao_Estadual( const Insc, UF: String): Integer;
-procedure ControlaCriterioSQL(var pQuery : TQuery; pHints : array of string; Ativa : boolean);
+procedure ControlaCriterioSQL(var pQuery : TFDQuery; pHints : array of string; Ativa : boolean);
 function Ramo_Atividade(Codigo_Empresa: Real) : String;
 function RetiraCaracteresInvalidosCheque(s:string) : string;
 function NomeComputador : String;
@@ -57,10 +57,9 @@ function Formata_CPF(var CPF:string):string;
 Function ExternalProcedure(MainApplication : TApplication; ServerName, UserName, PassWord, Empresa : String; const dbhandle : LongWord; Params : TStrings; LibraryName : string; ProcedureName : string): pointer;
 Function Empresa_matriz(codigo_empresa :Real): Integer;
 function digito_codbar_boleto( Numero:String ):integer;
-procedure ExecuteDirect(SQL: String; connection: TDataBase);
 procedure cxGridExportForExcel(cxGrid: TcxGrid);
 function GetPathFileNameExport: String;
-function GetRecordSet(var RecordSet: TQuery; SQL: String): TDataSet;
+function GetRecordSet(var RecordSet: TFDQuery; SQL: String): TDataSet;
 function ObterDataCorrenteOracle: TDateTime;
 procedure permiteFaturarCTe;
 procedure listarArquivosDir(diretorio: string; lista: TStrings);
@@ -957,32 +956,7 @@ begin
 end;
 
 
-procedure ExecuteDirect(SQL: String; connection: TDataBase);
-var
-   executeDB: TDataBase;
-begin
-   try
-      try
-         executeDB := TDatabase.Create(Application);
-         executeDB.DatabaseName := 'executeDB';
-         executeDB.DriverName := 'ORACLE';
-         executeDB.LoginPrompt := False;
-         executeDB.Params := connection.Params;
-         executeDB.TransIsolation := tiReadCommitted;
-         executeDB.Connected := True;
-         executeDB.StartTransaction;
-         executeDB.Execute(SQL);
-         executeDB.Commit;
-      except
-         begin
-            executeDB.Rollback;
-            raise;
-         end;
-      end;
-   finally
-       FreeAndNil(executeDB);
-   end;
-end;
+
 
 
 procedure cxGridExportForExcel(cxGrid: TcxGrid);

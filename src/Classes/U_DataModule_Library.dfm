@@ -22,17 +22,6 @@ object DataModule_Library: TDataModule_Library
     Left = 144
     Top = 40
   end
-  object siLangDispatcher_Main: TsiLangDispatcher
-    ActiveLanguage = 1
-    NumOfLanguages = 3
-    LangNames.Strings = (
-      'Portuguese'
-      'English'
-      'Spanish')
-    Language = 'Portuguese'
-    Left = 416
-    Top = 104
-  end
   object Main_StyleRepository: TcxStyleRepository
     Left = 416
     Top = 174

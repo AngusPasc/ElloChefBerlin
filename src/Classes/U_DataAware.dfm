@@ -184,12 +184,17 @@ object F_DataAware: TF_DataAware
     Properties.ActivePage = tsCadastro
     Properties.CustomButtons.Buttons = <>
     Properties.HideTabs = True
-    ClientRectBottom = 358
-    ClientRectRight = 752
-    ClientRectTop = 0
+    ClientRectBottom = 354
+    ClientRectLeft = 4
+    ClientRectRight = 748
+    ClientRectTop = 4
     object tsPesquisa: TcxTabSheet
       Caption = 'Pesquisa'
       ImageIndex = 0
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsCadastro: TcxTabSheet
       Caption = 'Cadastro'
@@ -265,7 +270,7 @@ object F_DataAware: TF_DataAware
     Left = 572
     Top = 88
     Bitmap = {
-      494C010109009000D00010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109009000D40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000

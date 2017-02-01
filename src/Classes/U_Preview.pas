@@ -22,7 +22,10 @@ uses
   dxSkinWhiteprint, dxSkinXmas2008Blue, Vcl.StdCtrls, ppViewr, Vcl.ImgList,
   cxButtons, Vcl.ExtCtrls, cxControls, cxContainer, cxEdit, cxMaskEdit,
   cxDropDownEdit, Vcl.Buttons, cxTextEdit,ppComm, ppRelatv,
-  ppProd, ppClass, ppReport, ToolWin, ppTypes;
+  ppProd, ppClass, ppReport, ToolWin, ppTypes, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, System.ImageList;
 
 type
   TF_Preview = class(TForm)
@@ -30,7 +33,6 @@ type
     bt_Sair: TcxButton;
     bt_Imprime: TcxButton;
     Imagens: TImageList;
-    ppViewer1: TppViewer;
     Panel1: TPanel;
     L_Status: TLabel;
     Panel2: TPanel;

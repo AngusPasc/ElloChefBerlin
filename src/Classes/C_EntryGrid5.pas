@@ -10,7 +10,7 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client,
   Data.DB, FireDAC.Comp.DataSet, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, Dbgrids,
-  Vcl.Menus, Bde.DBTables, cxGridDBTableView, FireDAC.UI.Intf,
+  Vcl.Menus, cxGridDBTableView, FireDAC.UI.Intf,
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys, FireDAC.Phys.ODBCBase,
   FireDAC.Phys.MSSQL, cxDB, cxDBFilter, cxDBData, cxDBEdit, cxGridDBDataDefinitions,
   cxGridTableView, cxGrid,
@@ -18,7 +18,7 @@ uses
   cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit,
   cxNavigator, dxmdaset, cxGridLevel, cxGridCustomTableView,
-  cxClasses, cxGridCustomView, cxEditRepositoryItems;
+  cxClasses, cxGridCustomView, cxEditRepositoryItems, FireDAC.Phys.MSSQLDef;
 
 
 type
@@ -83,7 +83,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DataModule_Library, U_DATAMASTER;
+uses U_DataModule_Library, unRegrasDataModule;
 
 procedure TF_EntryGrid5.Altera1Click(Sender: TObject);
 begin

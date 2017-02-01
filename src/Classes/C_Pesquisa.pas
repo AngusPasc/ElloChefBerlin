@@ -24,7 +24,10 @@ uses
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, cxContainer, cxGroupBox, cxRadioGroup,
   cxDBEdit, cxTextEdit, FireDAC.Comp.DataSet, FireDAC.Comp.Client, cxMaskEdit,
-  cxDropDownEdit, Vcl.Grids, Vcl.DBGrids;
+  cxDropDownEdit, Vcl.Grids, Vcl.DBGrids, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light;
 
 type
   pgStyle = (pgSingle, pgWordSearch);
@@ -65,7 +68,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DATAMASTER, U_DataModule_Library;
+uses U_DataModule_Library, unRegrasDataModule;
 
 { TF_Pesquisa }
 

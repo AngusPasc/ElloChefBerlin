@@ -1,0 +1,14 @@
+/app/*.exe
+/base/*.FDB
+/src/Classes/__history/*.~1~
+/src/Classes/__history/*.~2~
+/src/Classes/__history/*.~3~
+/src/__history/*.~1~
+/src/__history/*.~2~
+/src/__history/*.~3~
+/src/__history/*.~4~
+/src/__history/*.~5~
+/src/Win32/Debug/*.dcu
+/src/FoodTruck.skincfg
+/src/FoodTruck.stat
+/firebird.log

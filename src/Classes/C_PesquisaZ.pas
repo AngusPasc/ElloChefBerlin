@@ -20,7 +20,10 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, cxTextEdit,
-  Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, cxButtons;
+  Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, cxButtons, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light;
 
 type
   pgStyle = (pgSingle, pgWordSearch);
@@ -69,7 +72,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DATAMASTER, U_DataModule_Library;
+uses U_DataModule_Library, unRegrasDataModule;
 
 procedure TF_PesquisaZ.FormShow(Sender: TObject);
 begin

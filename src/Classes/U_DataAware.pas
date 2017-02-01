@@ -26,7 +26,12 @@ uses
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
   cxContainer, FireDAC.Comp.DataSet, cxTextEdit, cxDBEdit, Vcl.Menus, cxButtons,
-  Vcl.ImgList, dbGrids, cxPCdxBarPopupMenu, cxPC, ACBrBase, ACBrEnterTab;
+  Vcl.ImgList, dbGrids, cxPCdxBarPopupMenu, cxPC, ACBrBase, ACBrEnterTab,
+  dxSkinMetropolis, dxSkinMetropolisDark, dxSkinOffice2013DarkGray,
+  dxSkinOffice2013LightGray, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxBarBuiltInMenu, FireDAC.Phys.MSSQLDef,
+  System.ImageList;
 
 type
   TF_DataAware = class(TForm)
@@ -100,7 +105,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DataModule_Library, U_DATAMASTER;
+uses U_DataModule_Library, unRegrasDataModule;
 
 
 procedure none(IsDelete : Boolean);

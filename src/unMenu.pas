@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.UI.Intf, FireDAC.VCLUI.Wait,
   Vcl.ComCtrls, FireDAC.Phys, FireDAC.Phys.IBBase, FireDAC.Phys.FB,
   FireDAC.Stan.Intf, FireDAC.Comp.UI, Vcl.ImgList, Vcl.Menus, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.ExtCtrls;
+  Vcl.Buttons, Vcl.ExtCtrls, FireDAC.Phys.FBDef, System.ImageList;
 
 type
   TfrmMenu = class(TForm)

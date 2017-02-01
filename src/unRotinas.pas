@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Buttons, ToolWin, ComCtrls, DBTables, Menus, DBGrids, Db, Extctrls, stdctrls, dbctrls,
+  Buttons, ToolWin, ComCtrls, Menus, DBGrids, Db, Extctrls, stdctrls, dbctrls,
   cxRadioGroup, cxDBEdit, cxCalendar, cxGrid, variants,ShellApi,ShlObj,FireDAC.Comp.Client,
   FireDAC.Comp.DataSet, StrUtils, Tlhelp32;
 
@@ -14,6 +14,7 @@ function ChecaUF(UF : String) : Boolean;
 function IncCodigo(campo, tabela : String) : String;
 function BuscaProduto(codigo : String) : String;
 function BuscaCodItem(CodPedido : integer) : integer;
+procedure listarArquivosDir(diretorio: string; lista: TStrings);
 
 implementation
 
@@ -117,6 +118,21 @@ begin
         Free;
      end;
    end;
+end;
+
+procedure listarArquivosDir(diretorio: string; lista: TStrings);
+var
+  search_rec: TSearchRec;
+begin
+  if FindFirst(diretorio + '*.*', faAnyFile, search_rec) = 0 then
+    begin
+      repeat
+        if search_rec.Attr <> faDirectory then
+          lista.Add(search_rec.Name);
+      until FindNext(search_rec) <> 0;
+
+      FindClose(search_rec);
+    end;
 end;
 
 end.

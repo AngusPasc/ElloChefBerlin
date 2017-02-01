@@ -5,19 +5,18 @@ interface
 uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
-  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, siComp,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Comp.Client, Data.DB, FireDAC.Phys.ODBCBase, FireDAC.Phys.MSSQL,
   cxGridBandedTableView, cxStyles, cxGridTableView, cxClasses,
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, IniFiles, Vcl.Forms,
-  Winapi.Messages, Vcl.dialogs, Vcl.StdCtrls, UCDataConnector, UCFireDACConn,
-  FireDAC.Phys.IBBase, FireDAC.Phys.FB;
+  Winapi.Messages, Vcl.dialogs, Vcl.StdCtrls, FireDAC.Phys.IBBase,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef;
 
 type
   TDataModule_Library = class(TDataModule)
     Conexao: TFDConnection;
     Transaction: TFDTransaction;
-    siLangDispatcher_Main: TsiLangDispatcher;
     Main_StyleRepository: TcxStyleRepository;
     cxStyle2: TcxStyle;
     cxStyle3: TcxStyle;

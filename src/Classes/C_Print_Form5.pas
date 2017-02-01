@@ -20,7 +20,10 @@ uses
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine, dxSkinVS2010,
   dxSkinWhiteprint, dxSkinXmas2008Blue, dxPrnDev, cxClasses, dxPrnDlg,
-  Vcl.ImgList, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, dbGrids;
+  Vcl.ImgList, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, dbGrids, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, System.ImageList;
 
 type
   TF_Print_Form5 = class(TForm)
@@ -54,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DATAMASTER, U_DataModule_Library;
+uses U_DataModule_Library, unRegrasDataModule;
 
 procedure TF_Print_Form5.bt_ImprimeClick(Sender: TObject);
 begin

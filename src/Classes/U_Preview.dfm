@@ -122,28 +122,14 @@ object F_Preview: TF_Preview
       end
     end
   end
-  object ppViewer1: TppViewer
-    Left = 0
-    Top = 64
-    Width = 701
-    Height = 341
-    Align = alClient
-    BevelOuter = bvNone
-    Color = clBtnShadow
-    DeadSpace = 30
-    PageColor = clWhite
-    ZoomPercentage = 100
-    ZoomSetting = zsWholePage
-    OnPageChange = ppViewer1PageChange
-    OnStatusChange = ppViewer1StatusChange
-  end
   object Panel1: TPanel
     Left = 0
-    Top = 405
+    Top = 404
     Width = 701
     Height = 21
     Align = alBottom
     TabOrder = 2
+    ExplicitTop = 405
     object L_Status: TLabel
       Left = 11
       Top = 4
@@ -165,7 +151,7 @@ object F_Preview: TF_Preview
     Height = 54
     BevelInner = bvLowered
     BevelOuter = bvNone
-    TabOrder = 3
+    TabOrder = 1
     object Label2: TLabel
       Left = 63
       Top = 4
@@ -202,7 +188,7 @@ object F_Preview: TF_Preview
     Left = 415
     Top = 184
     Bitmap = {
-      494C01010B009000040110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B009000080110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000

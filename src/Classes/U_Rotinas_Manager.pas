@@ -8,7 +8,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Buttons, ToolWin, ComCtrls, DBTables, Menus, DBGrids, Db, Extctrls, stdctrls, dbctrls,
+  Buttons, ToolWin, ComCtrls, Menus, DBGrids, Db, Extctrls, stdctrls, dbctrls,
   cxRadioGroup, cxDBEdit, cxCalendar, cxGrid, variants,ShellApi,ShlObj,FireDAC.Comp.Client,
   FireDAC.Comp.DataSet, StrUtils, Tlhelp32;
 
