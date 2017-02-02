@@ -144,6 +144,14 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Classes\unRegrasDataModule.pas"/>
+        <DCCReference Include="Classes\unPadraoRelatorio.pas">
+            <Form>frmPadraoRelatorio</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unRelatorioPedido.pas">
+            <Form>frmRelatorioPedido</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

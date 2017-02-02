@@ -26,7 +26,11 @@ uses
   cxClasses, cxGridCustomView, cxGrid, Vcl.StdCtrls, cxTextEdit, cxDBEdit,
   ACBrBase, ACBrEnterTab, FireDAC.Comp.UI, FireDAC.Phys, FireDAC.Phys.ODBCBase,
   FireDAC.Phys.MSSQL, Vcl.ImgList, FireDAC.Comp.Client, FireDAC.Comp.DataSet,
-  cxPC, cxButtons, Vcl.ExtDlgs, Vcl.DBCtrls;
+  cxPC, cxButtons, Vcl.ExtDlgs, Vcl.DBCtrls, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, dxBarBuiltInMenu,
+  FireDAC.Phys.MSSQLDef, System.ImageList;
 
 type
   TfrmProduto = class(TF_DataAware)
@@ -37,7 +41,7 @@ type
     cxgProduto: TcxGrid;
     cxgProdutoDBTableView1: TcxGridDBTableView;
     cxgEmpresaDBTVCodigoProduto: TcxGridDBColumn;
-    cxgEmpresaDBTVCNPJ: TcxGridDBColumn;
+    cxgEmpresaDBTVDESCPROD: TcxGridDBColumn;
     cxgProdutoLevel1: TcxGridLevel;
     cxButton1: TcxButton;
     cxButton2: TcxButton;
@@ -71,9 +75,9 @@ var vArquivo: TFileStream;
     MemStream: TMemoryStream;
 begin
   inherited;
-   if odImagem.Execute then begin
-      imgFoto.Picture.LoadFromFile(odImagem.FileName);
-   end;
+//   if odImagem.Execute then begin
+//      imgFoto.Picture.LoadFromFile(odImagem.FileName);
+//   end;
 
 
 
@@ -143,24 +147,24 @@ var vArquivo: TFileStream;
     MemStream: TMemoryStream;
 begin
   inherited;
-  if (MainTable.State in[dsInsert,dsEdit]) then
-  begin
-   if odImagem.Execute then begin
-      imgFoto.Picture.LoadFromFile(odImagem.FileName);
-      vArquivo := TFileStream.Create(odImagem.FileName,fmOpenRead);
-      //Pode ser feito Insert ou Update
-      with qryImagem do
-      try
-        qryImagem.Connection := frmProduto.MainTable.Connection;
-        qryImagem.Sql.Add(' INSERT INTO PRODUTO (IMAGEM) VALUES(:FOTOCARREGADA) ');
-        qryImagem.Params[0].DataType := ftBlob;
-        qryImagem.Params[0].AsStream   := vArquivo;
-        ExecSQL;
-      finally
-        Free;
-      end;
-   end;
-  end;
+//  if (MainTable.State in[dsInsert,dsEdit]) then
+//  begin
+//   if odImagem.Execute then begin
+//      imgFoto.Picture.LoadFromFile(odImagem.FileName);
+//      vArquivo := TFileStream.Create(odImagem.FileName,fmOpenRead);
+//      //Pode ser feito Insert ou Update
+//      with qryImagem do
+//      try
+//        qryImagem.Connection := frmProduto.MainTable.Connection;
+//        qryImagem.Sql.Add(' INSERT INTO PRODUTO (IMAGEM) VALUES(:FOTOCARREGADA) ');
+//        qryImagem.Params[0].DataType := ftBlob;
+//        qryImagem.Params[0].AsStream   := vArquivo;
+//        ExecSQL;
+//      finally
+//        Free;
+//      end;
+//   end;
+//  end;
 
 end;
 

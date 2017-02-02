@@ -6,12 +6,15 @@ object DataModule_Library: TDataModule_Library
   object Conexao: TFDConnection
     Params.Strings = (
       
-        'Database=E:\Desenvolvimento\Desktop\DelphiXE5\FoodTruck\Base\SIG' +
-        'FOOD.FDB'
+        'Database=localhost/3050:F:\Projetos\ElloChefBerlin\base\SIGFOOD.' +
+        'FDB'
       'User_Name=SYSDBA'
       'OSAuthent=No'
       'Password=masterkey'
+      'Port=3050'
+      'CharacterSet=ISO8859_1'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Transaction = Transaction
     Left = 56
@@ -277,18 +280,9 @@ object DataModule_Library: TDataModule_Library
       BuiltIn = True
     end
   end
-  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
-    Provider = 'Forms'
-    Left = 552
-    Top = 40
-  end
   object Q_CarregaScripts: TFDQuery
     Connection = Conexao
-    Left = 552
-    Top = 104
-  end
-  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    Left = 416
-    Top = 40
+    Left = 280
+    Top = 32
   end
 end

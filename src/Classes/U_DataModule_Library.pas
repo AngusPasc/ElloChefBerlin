@@ -6,12 +6,12 @@ uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
-  FireDAC.Comp.Client, Data.DB, FireDAC.Phys.ODBCBase, FireDAC.Phys.MSSQL,
+  FireDAC.Comp.Client, Data.DB, FireDAC.Phys.ODBCBase,
   cxGridBandedTableView, cxStyles, cxGridTableView, cxClasses,
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, IniFiles, Vcl.Forms,
   Winapi.Messages, Vcl.dialogs, Vcl.StdCtrls, FireDAC.Phys.IBBase,
-  FireDAC.Phys.FB, FireDAC.Phys.FBDef;
+  FireDAC.Phys.FBDef, FireDAC.Phys.FB;
 
 type
   TDataModule_Library = class(TDataModule)
@@ -43,9 +43,7 @@ type
     cxStyle24: TcxStyle;
     Default: TcxGridTableViewStyleSheet;
     Default2: TcxGridBandedTableViewStyleSheet;
-    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     Q_CarregaScripts: TFDQuery;
-    FDPhysFBDriverLink1: TFDPhysFBDriverLink;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

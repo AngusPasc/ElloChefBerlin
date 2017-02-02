@@ -17,24 +17,16 @@ uses
   C_PesquisaGlobal in 'Classes\C_PesquisaGlobal.pas' {F_PesquisaGlobal},
   C_PesquisaZ in 'Classes\C_PesquisaZ.pas' {F_PesquisaZ},
   C_Print_Form5 in 'Classes\C_Print_Form5.pas' {F_Print_Form5},
-  unRegrasDataModule in 'Classes\unRegrasDataModule.pas';
+  unRegrasDataModule in 'Classes\unRegrasDataModule.pas',
+  unPadraoRelatorio in 'Classes\unPadraoRelatorio.pas' {frmPadraoRelatorio},
+  unRelatorioPedido in 'unRelatorioPedido.pas' {frmRelatorioPedido};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TfrmMenu, frmMenu);
-  Application.CreateForm(TfrmProduto, frmProduto);
-  Application.CreateForm(TfrmPedido, frmPedido);
-  Application.CreateForm(TF_CarregaDados, F_CarregaDados);
-  Application.CreateForm(TF_DataAware, F_DataAware);
   Application.CreateForm(TDataModule_Library, DataModule_Library);
-  Application.CreateForm(TF_DetailGrid5, F_DetailGrid5);
-  Application.CreateForm(TF_EntryGrid5, F_EntryGrid5);
-  Application.CreateForm(TF_Pesquisa, F_Pesquisa);
-  Application.CreateForm(TF_PesquisaGlobal, F_PesquisaGlobal);
-  Application.CreateForm(TF_PesquisaZ, F_PesquisaZ);
-  Application.CreateForm(TF_Print_Form5, F_Print_Form5);
+  Application.CreateForm(TfrmMenu, frmMenu);
   Application.Run;
 end.
