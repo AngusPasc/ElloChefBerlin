@@ -32,11 +32,8 @@ type
   TfrmPadraoRelatorio = class(TForm)
     pnBotoes: TPanel;
     bt_Visualiza: TcxButton;
-    bt_Envia: TcxButton;
     bt_Sair: TcxButton;
-    bt_Imprime: TcxButton;
     Imagens: TImageList;
-    dxPrintDialog1: TdxPrintDialog;
     Query: TFDQuery;
     frxDataset: TfrxDBDataset;
     procedure FormShow(Sender: TObject);

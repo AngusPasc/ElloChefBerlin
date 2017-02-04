@@ -23,7 +23,11 @@ uses
   FireDAC.VCLUI.Wait, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, ACBrBase,
   ACBrEnterTab, FireDAC.Comp.UI, FireDAC.Phys, FireDAC.Phys.ODBCBase,
   FireDAC.Phys.MSSQL, Vcl.ImgList, FireDAC.Comp.Client, Data.DB,
-  FireDAC.Comp.DataSet, cxPC, cxButtons, Vcl.ExtCtrls;
+  FireDAC.Comp.DataSet, cxPC, cxButtons, Vcl.ExtCtrls, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, dxBarBuiltInMenu,
+  FireDAC.Phys.MSSQLDef, System.ImageList;
 
 type
   TfrmPedido = class(TF_DataAware)
@@ -102,7 +106,7 @@ implementation
 
 {$R *.dfm}
 
-uses unRotinas;
+uses unRotinas, U_DataModule_Library, unPesquisaProdutoZ;
 
 procedure none(IsDelete : Boolean);
 begin
@@ -282,11 +286,32 @@ begin
         Free;
       end;
    end;
+
+   if Key = VK_F1 then
+   begin
+      with DataModule_Library do
+      begin
+          FrmPesquisaProdutoZ := TFrmPesquisaProdutoZ.Create(Self);
+
+          with FrmPesquisaProdutoZ do
+          begin
+            Query.Close;
+            Query.SQL.Clear;
+            Query.SQL.Add(strProdutos);
+            Query.Open;
+
+            FrmPesquisaProdutoZ.ShowModal;
+            edCodigoProduto.Text := Query.FieldByName('COD_PRODUTO').AsString;
+          end;
+
+      end;
+   end;
 end;
 
 procedure TfrmPedido.edCodigoProdutoKeyPress(Sender: TObject; var Key: Char);
 begin
   inherited;
+
    if not(key in ['0'..'9',#8]) then
       Key:=#0;
 end;

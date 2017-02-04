@@ -54,6 +54,8 @@ type
 var
   DataModule_Library: TDataModule_Library;
 
+  strProdutos : String;
+
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
@@ -83,6 +85,10 @@ begin
       MessageDlg('Por medida se segurança, seu aplicativo não será inicializado !!', mtWarning, [mbOK], 0);
       Application.Terminate;
  End;
+
+     //Selects Iniciais para as pesquisas
+     strProdutos := 'SELECT P.COD_PRODUTO, P.DESCRICAO FROM PRODUTO P ORDER BY P.DESCRICAO';
+
 
 end;
 

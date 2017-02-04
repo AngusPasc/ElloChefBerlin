@@ -19,7 +19,10 @@ uses
   C_Print_Form5 in 'Classes\C_Print_Form5.pas' {F_Print_Form5},
   unRegrasDataModule in 'Classes\unRegrasDataModule.pas',
   unPadraoRelatorio in 'Classes\unPadraoRelatorio.pas' {frmPadraoRelatorio},
-  unRelatorioPedido in 'unRelatorioPedido.pas' {frmRelatorioPedido};
+  unRelatorioPedido in 'unRelatorioPedido.pas' {frmRelatorioPedido},
+  unPesquisaProduto in 'unPesquisaProduto.pas' {frmPesquisaProduto},
+  unPadraoPesquisas in 'Classes\unPadraoPesquisas.pas' {FrmPadraoPesquisas},
+  unPesquisaProdutoZ in 'unPesquisaProdutoZ.pas' {FrmPesquisaProdutoZ};
 
 {$R *.res}
 
@@ -28,5 +31,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDataModule_Library, DataModule_Library);
   Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TFrmPesquisaProdutoZ, FrmPesquisaProdutoZ);
   Application.Run;
 end.

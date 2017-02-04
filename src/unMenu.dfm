@@ -10,6 +10,7 @@ object frmMenu: TfrmMenu
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
@@ -18,9 +19,9 @@ object frmMenu: TfrmMenu
   TextHeight = 13
   object Image1: TImage
     Left = 0
-    Top = 89
+    Top = 49
     Width = 781
-    Height = 402
+    Height = 442
     Align = alClient
     ExplicitLeft = 456
     ExplicitTop = 296
@@ -63,51 +64,15 @@ object frmMenu: TfrmMenu
     Left = 0
     Top = 0
     Width = 781
-    Height = 89
+    Height = 49
     Align = alTop
     TabOrder = 1
-    object BitBtn1: TBitBtn
-      Left = 16
-      Top = 13
-      Width = 75
-      Height = 65
-      Caption = 'Prod'
-      TabOrder = 0
-      OnClick = BitBtn1Click
-    end
-    object BitBtn2: TBitBtn
-      Left = 97
-      Top = 13
-      Width = 75
-      Height = 65
-      Caption = 'Pedidos'
-      TabOrder = 1
-      OnClick = BitBtn2Click
-    end
-    object BitBtn3: TBitBtn
-      Left = 274
-      Top = 13
-      Width = 75
-      Height = 65
-      Caption = 'Parametros'
-      TabOrder = 2
-      OnClick = BitBtn2Click
-    end
-    object BitBtn4: TBitBtn
-      Left = 186
-      Top = 13
-      Width = 75
-      Height = 65
-      Caption = 'Rel vendas'
-      TabOrder = 3
-      OnClick = BitBtn2Click
-    end
   end
   object ListaImagemMenu: TImageList
     Left = 536
     Top = 32
     Bitmap = {
-      494C010102001800E80010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102001800EC0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000B3B3B3002424240020202000BCBCBC00000000000000
@@ -254,5 +219,41 @@ object frmMenu: TfrmMenu
   object FDPhysFBDriverLink1: TFDPhysFBDriverLink
     Left = 176
     Top = 192
+  end
+  object MainMenu1: TMainMenu
+    Left = 512
+    Top = 192
+    object Cadastro1: TMenuItem
+      Caption = 'Cadastros'
+      object Produtos1: TMenuItem
+        Caption = 'Produtos'
+        OnClick = Produtos1Click
+      end
+    end
+    object Venda1: TMenuItem
+      Caption = 'Venda'
+      object Pedidos1: TMenuItem
+        Caption = 'Pedidos'
+        OnClick = Pedidos1Click
+      end
+    end
+    object Relatrios1: TMenuItem
+      Caption = 'Relat'#243'rios'
+      object Pedido1: TMenuItem
+        Caption = 'Pedido'
+      end
+    end
+    object Configuraes1: TMenuItem
+      Caption = 'Configura'#231#245'es'
+      object Parametros1: TMenuItem
+        Caption = 'Parametros'
+      end
+    end
+    object Sobre1: TMenuItem
+      Caption = 'Sobre'
+      object Verso1: TMenuItem
+        Caption = 'Vers'#227'o'
+      end
+    end
   end
 end

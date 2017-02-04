@@ -24,10 +24,19 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, frxClass, frxDBSet, cxClasses,
-  dxPrnDlg, System.ImageList, Vcl.ImgList, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls;
+  dxPrnDlg, System.ImageList, Vcl.ImgList, Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls,
+  FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, Vcl.Mask;
 
 type
   TfrmRelatorioPedido = class(TfrmPadraoRelatorio)
+    FDConnection1: TFDConnection;
+    rgTipoRelatorio: TRadioGroup;
+    edDataInicial: TMaskEdit;
+    Label1: TLabel;
+    edDataFinal: TMaskEdit;
+    Label2: TLabel;
+    RadioGroup1: TRadioGroup;
   private
     { Private declarations }
   public

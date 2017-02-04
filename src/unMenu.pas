@@ -16,15 +16,22 @@ type
     FDPhysFBDriverLink1: TFDPhysFBDriverLink;
     sbMenu: TStatusBar;
     Panel1: TPanel;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
-    BitBtn4: TBitBtn;
     Image1: TImage;
+    MainMenu1: TMainMenu;
+    Cadastro1: TMenuItem;
+    Venda1: TMenuItem;
+    Relatrios1: TMenuItem;
+    Configuraes1: TMenuItem;
+    Sobre1: TMenuItem;
+    Produtos1: TMenuItem;
+    Pedidos1: TMenuItem;
+    Pedido1: TMenuItem;
+    Parametros1: TMenuItem;
+    Verso1: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure BitBtn1Click(Sender: TObject);
-    procedure BitBtn2Click(Sender: TObject);
+    procedure Produtos1Click(Sender: TObject);
+    procedure Pedidos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,20 +46,6 @@ implementation
 uses unRotinas, unEmpresa, unProduto, unPedido;
 
 {$R *.dfm}
-
-procedure TfrmMenu.BitBtn1Click(Sender: TObject);
-begin
-    frmProduto := TfrmProduto.Create(nil);
-    frmProduto.ShowModal;
-    frmProduto.Release;
-end;
-
-procedure TfrmMenu.BitBtn2Click(Sender: TObject);
-begin
-    frmPedido := TfrmPedido.Create(nil);
-    frmPedido.ShowModal;
-    frmPedido.Release;
-end;
 
 procedure TfrmMenu.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -80,6 +73,20 @@ begin
                     end;
        end;
     end;
+end;
+
+procedure TfrmMenu.Pedidos1Click(Sender: TObject);
+begin
+    frmPedido := TfrmPedido.Create(nil);
+    frmPedido.ShowModal;
+    frmPedido.Release;
+end;
+
+procedure TfrmMenu.Produtos1Click(Sender: TObject);
+begin
+    frmProduto := TfrmProduto.Create(nil);
+    frmProduto.ShowModal;
+    frmProduto.Release;
 end;
 
 end.

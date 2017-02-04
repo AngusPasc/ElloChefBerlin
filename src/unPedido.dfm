@@ -3,14 +3,14 @@ inherited frmPedido: TfrmPedido
   ClientHeight = 494
   ClientWidth = 775
   ExplicitWidth = 791
-  ExplicitHeight = 532
+  ExplicitHeight = 533
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnBotoes: TPanel
     Top = 430
     Width = 775
     ExplicitTop = 430
-    ExplicitWidth = 750
+    ExplicitWidth = 775
     inherited bt_Novo: TcxButton
       Left = 423
       Width = 72
@@ -75,18 +75,18 @@ inherited frmPedido: TfrmPedido
   inherited pc_Cadastro: TcxPageControl
     Width = 775
     Height = 430
-    ExplicitWidth = 750
+    ExplicitWidth = 775
     ExplicitHeight = 430
-    ClientRectBottom = 430
-    ClientRectRight = 775
+    ClientRectBottom = 426
+    ClientRectRight = 771
     inherited tsPesquisa: TcxTabSheet
-      ExplicitWidth = 750
-      ExplicitHeight = 430
+      ExplicitWidth = 767
+      ExplicitHeight = 422
     end
     inherited tsCadastro: TcxTabSheet
       ParentFont = False
-      ExplicitWidth = 750
-      ExplicitHeight = 430
+      ExplicitWidth = 767
+      ExplicitHeight = 422
       object Label3: TLabel
         Left = 15
         Top = 77
@@ -174,7 +174,7 @@ inherited frmPedido: TfrmPedido
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 775
+        Width = 767
         Height = 65
         Align = alTop
         Color = clBlack
@@ -186,7 +186,6 @@ inherited frmPedido: TfrmPedido
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 750
         object Label1: TLabel
           Left = 15
           Top = 11
@@ -273,7 +272,6 @@ inherited frmPedido: TfrmPedido
             Expanded = False
             FieldName = 'VR_BRUTO'
             Title.Caption = 'Valor Bruto'
-            Width = 64
             Visible = True
           end>
       end
@@ -340,7 +338,7 @@ inherited frmPedido: TfrmPedido
         object Label8: TLabel
           Left = 12
           Top = 11
-          Width = 153
+          Width = 149
           Height = 33
           Caption = 'SUB TOTAL'
           Font.Charset = DEFAULT_CHARSET
@@ -457,7 +455,7 @@ inherited frmPedido: TfrmPedido
   end
   inherited Imagens: TImageList
     Bitmap = {
-      494C010109009000E80010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109009000EC0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000
@@ -890,7 +888,6 @@ inherited frmPedido: TfrmPedido
         Name = 'COD_PEDIDO'
         DataType = ftInteger
         ParamType = ptInput
-        Value = Null
       end>
     object qryPedidoItemCOD_PEDIDO: TIntegerField
       FieldName = 'COD_PEDIDO'

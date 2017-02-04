@@ -3,7 +3,7 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
   Top = 0
   Caption = 'Relat'#243'rio Padr'#227'o'
   ClientHeight = 245
-  ClientWidth = 495
+  ClientWidth = 494
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,12 +17,13 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
   object pnBotoes: TPanel
     Left = 0
     Top = 181
-    Width = 495
+    Width = 494
     Height = 64
     Align = alBottom
     TabOrder = 0
+    ExplicitWidth = 495
     object bt_Visualiza: TcxButton
-      Left = 10
+      Left = 34
       Top = 13
       Width = 83
       Height = 34
@@ -32,35 +33,13 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
       OptionsImage.Spacing = 7
       TabOrder = 0
     end
-    object bt_Envia: TcxButton
-      Left = 188
-      Top = 13
-      Width = 83
-      Height = 34
-      Caption = '&Envia'
-      OptionsImage.ImageIndex = 10
-      OptionsImage.Images = Imagens
-      OptionsImage.Spacing = 7
-      TabOrder = 2
-    end
     object bt_Sair: TcxButton
-      Left = 349
+      Left = 389
       Top = 13
       Width = 83
       Height = 34
       Caption = '&Sair'
       OptionsImage.ImageIndex = 4
-      OptionsImage.Images = Imagens
-      OptionsImage.Spacing = 7
-      TabOrder = 3
-    end
-    object bt_Imprime: TcxButton
-      Left = 99
-      Top = 13
-      Width = 83
-      Height = 34
-      Caption = '&Imprime'
-      OptionsImage.ImageIndex = 2
       OptionsImage.Images = Imagens
       OptionsImage.Spacing = 7
       TabOrder = 1
@@ -70,7 +49,7 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
     Left = 399
     Top = 24
     Bitmap = {
-      494C01010B009000180110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B0090001C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000
@@ -472,10 +451,6 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
       0003E0078001C0000003C003F00FC00100038001F00FC00180070000F00FC003
       F03F0000F00FC007F87FFFFFF01FC00F00000000000000000000000000000000
       000000000000}
-  end
-  object dxPrintDialog1: TdxPrintDialog
-    Left = 296
-    Top = 24
   end
   object frxReport1: TfrxReport
     Version = '5.3.14'
