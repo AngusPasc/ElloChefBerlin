@@ -32,6 +32,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Produtos1Click(Sender: TObject);
     procedure Pedidos1Click(Sender: TObject);
+    procedure Pedido1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,7 +44,8 @@ var
 
 implementation
 
-uses unRotinas, unEmpresa, unProduto, unPedido;
+uses unRotinas, unEmpresa, unProduto, unPedido, unPedidos, unRelatorioPedido,
+  unRelPedidos;
 
 {$R *.dfm}
 
@@ -75,11 +77,19 @@ begin
     end;
 end;
 
+procedure TfrmMenu.Pedido1Click(Sender: TObject);
+begin
+//   AbreForm(frmRelPedidos);
+//    frmRelPedidos := TfrmRelPedidos.Create(nil);
+    frmRelatorioPedido.ShowModal;
+    frmRelatorioPedido.Release;
+end;
+
 procedure TfrmMenu.Pedidos1Click(Sender: TObject);
 begin
-    frmPedido := TfrmPedido.Create(nil);
-    frmPedido.ShowModal;
-    frmPedido.Release;
+    frmPedidos := TfrmPedidos.Create(nil);
+    frmPedidos.ShowModal;
+    frmPedidos.Release;
 end;
 
 procedure TfrmMenu.Produtos1Click(Sender: TObject);

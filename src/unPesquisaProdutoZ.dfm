@@ -1,5 +1,5 @@
 inherited FrmPesquisaProdutoZ: TFrmPesquisaProdutoZ
-  Caption = 'FrmPadraoPesquisasZ'
+  Caption = 'Pesquisa de Produtos'
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
@@ -14,11 +14,7 @@ inherited FrmPesquisaProdutoZ: TFrmPesquisaProdutoZ
       Left = 136
       ExplicitLeft = 136
     end
-    inherited bt_Visualizar: TcxButton
-      Caption = '&Pesquisar'
-      OnClick = bt_VisualizarClick
-    end
-    object rgTipo: TRadioGroup
+    object rgTipo: TRadioGroup [2]
       Left = 11
       Top = 7
       Width = 113
@@ -28,15 +24,23 @@ inherited FrmPesquisaProdutoZ: TFrmPesquisaProdutoZ
       Items.Strings = (
         'Descri'#231#227'o'
         'C'#243'digo')
+      TabOrder = 2
+    end
+    inherited btPesquisa: TcxButton
+      TabOrder = 3
+      OnClick = btPesquisaClick
+    end
+    inherited btConfimar: TcxButton
       TabOrder = 4
     end
   end
   inherited DBGrid1: TDBGrid
+    OnDblClick = DBGrid1DblClick
     OnTitleClick = DBGrid1TitleClick
   end
   inherited Imagens: TImageList
     Bitmap = {
-      494C01010C009000580110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C009000600110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

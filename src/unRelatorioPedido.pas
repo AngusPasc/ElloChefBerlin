@@ -30,13 +30,13 @@ uses
 
 type
   TfrmRelatorioPedido = class(TfrmPadraoRelatorio)
-    FDConnection1: TFDConnection;
     rgTipoRelatorio: TRadioGroup;
     edDataInicial: TMaskEdit;
     Label1: TLabel;
     edDataFinal: TMaskEdit;
     Label2: TLabel;
     RadioGroup1: TRadioGroup;
+    procedure bt_VisualizaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,5 +49,21 @@ var
 implementation
 
 {$R *.dfm}
+
+uses unDM_Relatorios, unRotinas;
+
+procedure TfrmRelatorioPedido.bt_VisualizaClick(Sender: TObject);
+begin
+  inherited;
+  with DM_Relatorios do
+  begin
+    frxReportPedidos.LoadFromFile(BuscaCaminhoEXE + 'Relatorios\RelPedidosSimples.fr3');
+    qryPedidos.Close;
+    qryPedidos.SQL.Clear;
+    qryPedidos.SQL.Add('select * from pedidos');
+    qryPedidos.Open;
+    frxReportPedidos.ShowReport;
+  end;
+end;
 
 end.

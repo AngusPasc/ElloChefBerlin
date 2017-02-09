@@ -11,7 +11,7 @@ uses
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, IniFiles, Vcl.Forms,
   Winapi.Messages, Vcl.dialogs, Vcl.StdCtrls, FireDAC.Phys.IBBase,
-  FireDAC.Phys.FBDef, FireDAC.Phys.FB;
+  FireDAC.Phys.FBDef, FireDAC.Phys.FB, frxClass, frxDBSet;
 
 type
   TDataModule_Library = class(TDataModule)

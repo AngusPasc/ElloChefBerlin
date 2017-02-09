@@ -33,12 +33,12 @@ object FrmPadraoPesquisas: TFrmPadraoPesquisas
       Top = 16
       Caption = 'Digite o Conte'#250'do da Pesquisa'
     end
-    object bt_Visualizar: TcxButton
+    object btPesquisa: TcxButton
       Left = 608
       Top = 9
       Width = 99
       Height = 34
-      Caption = '&Visualizar'
+      Caption = '&Pesquisar'
       OptionsImage.ImageIndex = 10
       OptionsImage.Images = Imagens
       OptionsImage.Spacing = 7
@@ -46,14 +46,15 @@ object FrmPadraoPesquisas: TFrmPadraoPesquisas
     end
     object btConfimar: TcxButton
       Left = 608
-      Top = 49
+      Top = 51
       Width = 99
       Height = 34
       Caption = '&Confirmar'
-      OptionsImage.ImageIndex = 2
+      OptionsImage.ImageIndex = 10
       OptionsImage.Images = Imagens
       OptionsImage.Spacing = 7
       TabOrder = 3
+      OnClick = btConfimarClick
     end
   end
   object Panel2: TPanel
@@ -63,7 +64,6 @@ object FrmPadraoPesquisas: TFrmPadraoPesquisas
     Height = 76
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 272
     object bt_Sair: TcxButton
       Left = 608
       Top = 24
@@ -74,6 +74,7 @@ object FrmPadraoPesquisas: TFrmPadraoPesquisas
       OptionsImage.Images = Imagens
       OptionsImage.Spacing = 7
       TabOrder = 0
+      OnClick = bt_SairClick
     end
   end
   object DBGrid1: TDBGrid
@@ -95,7 +96,7 @@ object FrmPadraoPesquisas: TFrmPadraoPesquisas
     Left = 647
     Top = 176
     Bitmap = {
-      494C01010C009000540110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0090005C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

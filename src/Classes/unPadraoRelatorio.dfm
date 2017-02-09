@@ -11,7 +11,6 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnBotoes: TPanel
@@ -21,7 +20,6 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
     Height = 64
     Align = alBottom
     TabOrder = 0
-    ExplicitWidth = 495
     object bt_Visualiza: TcxButton
       Left = 34
       Top = 13
@@ -43,13 +41,14 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
       OptionsImage.Images = Imagens
       OptionsImage.Spacing = 7
       TabOrder = 1
+      OnClick = bt_SairClick
     end
   end
   object Imagens: TImageList
     Left = 399
     Top = 24
     Bitmap = {
-      494C01010B0090001C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B009000200110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000
@@ -451,55 +450,5 @@ object frmPadraoRelatorio: TfrmPadraoRelatorio
       0003E0078001C0000003C003F00FC00100038001F00FC00180070000F00FC003
       F03F0000F00FC007F87FFFFFF01FC00F00000000000000000000000000000000
       000000000000}
-  end
-  object frxReport1: TfrxReport
-    Version = '5.3.14'
-    DataSet = frxDataset
-    DataSetName = 'frxDBDataset1'
-    DotMatrixReport = False
-    IniFile = '\Software\Fast Reports'
-    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
-    PreviewOptions.Zoom = 1.000000000000000000
-    PrintOptions.Printer = 'Default'
-    PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 42767.383003530090000000
-    ReportOptions.LastChange = 42767.383003530090000000
-    ScriptLanguage = 'PascalScript'
-    ScriptText.Strings = (
-      'begin'
-      ''
-      'end.')
-    Left = 184
-    Top = 24
-    Datasets = <>
-    Variables = <>
-    Style = <>
-    object Data: TfrxDataPage
-      Height = 1000.000000000000000000
-      Width = 1000.000000000000000000
-    end
-    object Page1: TfrxReportPage
-      PaperWidth = 210.000000000000000000
-      PaperHeight = 297.000000000000000000
-      PaperSize = 9
-      LeftMargin = 10.000000000000000000
-      RightMargin = 10.000000000000000000
-      TopMargin = 10.000000000000000000
-      BottomMargin = 10.000000000000000000
-    end
-  end
-  object Query: TFDQuery
-    SQL.Strings = (
-      '')
-    Left = 32
-    Top = 24
-  end
-  object frxDataset: TfrxDBDataset
-    UserName = 'frxDBDataset1'
-    CloseDataSource = False
-    DataSet = Query
-    BCDToCurrency = False
-    Left = 104
-    Top = 24
   end
 end

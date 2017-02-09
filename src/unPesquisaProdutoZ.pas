@@ -24,16 +24,17 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList, Vcl.ImgList,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, cxButtons, cxLabel, cxTextEdit,
-  Vcl.ExtCtrls, FireDAC.Phys.FBDef, FireDAC.UI.Intf, FireDAC.VCLUI.Wait,
-  FireDAC.Comp.UI, FireDAC.Phys, FireDAC.Phys.IBBase, FireDAC.Phys.FB;
+  FireDAC.Phys.FBDef, FireDAC.UI.Intf, FireDAC.VCLUI.Wait, Vcl.StdCtrls,
+  Vcl.ExtCtrls, FireDAC.Comp.UI, FireDAC.Phys, FireDAC.Phys.IBBase,
+  FireDAC.Phys.FB, Vcl.Grids, Vcl.DBGrids, cxButtons, cxLabel, cxTextEdit;
 
 type
   TFrmPesquisaProdutoZ = class(TFrmPadraoPesquisas)
     rgTipo: TRadioGroup;
-    procedure bt_VisualizarClick(Sender: TObject);
     procedure edtPesquisaKeyPress(Sender: TObject; var Key: Char);
     procedure DBGrid1TitleClick(Column: TColumn);
+    procedure btPesquisaClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,7 +50,7 @@ implementation
 
 uses U_DataModule_Library;
 
-procedure TFrmPesquisaProdutoZ.bt_VisualizarClick(Sender: TObject);
+procedure TFrmPesquisaProdutoZ.btPesquisaClick(Sender: TObject);
 var sValor : String;
 begin
   inherited;
@@ -75,6 +76,12 @@ begin
         SQL.Add('ORDER BY P.COD_PRODUTO, P.DESCRICAO' );
         Open;
       end;
+end;
+
+procedure TFrmPesquisaProdutoZ.DBGrid1DblClick(Sender: TObject);
+begin
+  inherited;
+  btConfimar.Click;
 end;
 
 procedure TFrmPesquisaProdutoZ.DBGrid1TitleClick(Column: TColumn);

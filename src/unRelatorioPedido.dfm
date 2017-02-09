@@ -21,7 +21,9 @@ inherited frmRelatorioPedido: TfrmRelatorioPedido
   inherited pnBotoes: TPanel
     Top = 140
     ExplicitTop = 140
-    ExplicitWidth = 494
+    inherited bt_Visualiza: TcxButton
+      OnClick = bt_VisualizaClick
+    end
   end
   object rgTipoRelatorio: TRadioGroup [3]
     Left = 8
@@ -73,7 +75,7 @@ inherited frmRelatorioPedido: TfrmRelatorioPedido
     Left = 447
     Top = 16
     Bitmap = {
-      494C01010B009000280110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B0090002C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000
@@ -475,45 +477,5 @@ inherited frmRelatorioPedido: TfrmRelatorioPedido
       0003E0078001C0000003C003F00FC00100038001F00FC00180070000F00FC003
       F03F0000F00FC007F87FFFFFF01FC00F00000000000000000000000000000000
       000000000000}
-  end
-  inherited frxReport1: TfrxReport
-    DataSetName = 'frxDataset'
-    Datasets = <>
-    Variables = <>
-    Style = <>
-  end
-  inherited Query: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      ''
-      'SELECT * FROM PEDIDOS')
-  end
-  inherited frxDataset: TfrxDBDataset
-    UserName = 'frxDataset'
-  end
-  object FDConnection1: TFDConnection
-    Params.Strings = (
-      'DriverID=FB '
-      'Pooled=false'
-      
-        'Database=localhost/3050:F:\Projetos\ElloChefBerlin\base\SIGFOOD.' +
-        'FDB'
-      'Port=3050'
-      'User_Name=SYSDBA'
-      'Password=masterkey'
-      'MonitorBy='
-      'OSAuthent=No'
-      'Protocol=Local'
-      'Server='
-      'SQLDialect=3'
-      'RoleName=RoleName'
-      'CharSet=win1251'
-      'ExtendedMetadata=False'
-      'CreateDatabase=No'
-      'PageSize=8192'
-      'IBAdvanced=')
-    Connected = True
-    Left = 32
-    Top = 80
   end
 end

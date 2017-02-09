@@ -39,16 +39,18 @@ type
     edtPesquisa: TcxTextEdit;
     cxLabel1: TcxLabel;
     Imagens: TImageList;
-    bt_Visualizar: TcxButton;
-    bt_Sair: TcxButton;
-    btConfimar: TcxButton;
     Query: TFDQuery;
     DataSource: TDataSource;
     DBGrid1: TDBGrid;
     FDPhysFBDriverLink1: TFDPhysFBDriverLink;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    btPesquisa: TcxButton;
+    btConfimar: TcxButton;
+    bt_Sair: TcxButton;
     procedure edtPesquisaKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure bt_SairClick(Sender: TObject);
+    procedure btConfimarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,6 +59,7 @@ type
 
 var
   FrmPadraoPesquisas: TFrmPadraoPesquisas;
+  retornaValor : String;
 
 implementation
 
@@ -64,11 +67,22 @@ implementation
 
 uses U_DataModule_Library;
 
+procedure TFrmPadraoPesquisas.btConfimarClick(Sender: TObject);
+begin
+   btConfimar.Tag := 1;
+   close;
+end;
+
+procedure TFrmPadraoPesquisas.bt_SairClick(Sender: TObject);
+begin
+   Close;
+end;
+
 procedure TFrmPadraoPesquisas.edtPesquisaKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if key = VK_RETURN then
-  bt_Visualizar.Click;
+  btPesquisa.Click;
 end;
 
 end.

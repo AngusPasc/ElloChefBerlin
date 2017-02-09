@@ -1,399 +1,428 @@
-inherited frmPedido: TfrmPedido
-  Caption = 'Controle de Pedido'
-  ClientHeight = 494
-  ClientWidth = 775
-  ExplicitWidth = 791
-  ExplicitHeight = 533
+object frmPedidos: TfrmPedidos
+  Left = 0
+  Top = 0
+  Caption = 'Pedidos'
+  ClientHeight = 523
+  ClientWidth = 804
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  inherited pnBotoes: TPanel
-    Top = 430
-    Width = 775
+  object Image1: TImage
+    Left = 167
+    Top = 224
+    Width = 146
+    Height = 149
+  end
+  object Label10: TLabel
+    Left = 15
+    Top = 322
+    Width = 61
+    Height = 13
+    Caption = 'Valor Total'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 15
+    Top = 77
+    Width = 129
+    Height = 13
+    Caption = 'C'#243'digo do Produto (F1)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 15
+    Top = 149
+    Width = 120
+    Height = 13
+    Caption = 'Descri'#231#227'o do Produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 15
+    Top = 205
+    Width = 65
+    Height = 13
+    Caption = 'Quantidade'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 16
+    Top = 264
+    Width = 77
+    Height = 13
+    Caption = 'Valor Unit'#225'rio'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbDescProduto: TLabel
+    Left = 16
+    Top = 168
+    Width = 11
+    Height = 24
+    Caption = '_'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object pnBotoes: TPanel
+    Left = 0
+    Top = 459
+    Width = 804
+    Height = 64
+    Align = alBottom
+    TabOrder = 7
+    TabStop = True
+    ExplicitLeft = -14
     ExplicitTop = 430
     ExplicitWidth = 775
-    inherited bt_Novo: TcxButton
-      Left = 423
-      Width = 72
-      Caption = 'Novo Pedido'
-      ExplicitLeft = 423
-      ExplicitWidth = 72
-    end
-    inherited bt_Salvar: TcxButton
+    object bt_Salvar: TcxButton
       Left = 16
       Top = 16
       Width = 119
+      Height = 34
       Caption = '(F8) Finalizar'
+      OptionsImage.ImageIndex = 6
+      OptionsImage.Images = Imagens
+      OptionsImage.Spacing = 7
+      TabOrder = 1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
       ParentFont = False
-      ExplicitLeft = 16
-      ExplicitTop = 16
-      ExplicitWidth = 119
+      OnClick = bt_SalvarClick
     end
-    inherited bt_Altera: TcxButton
+    object bt_Altera: TcxButton
       Left = 269
       Top = 15
       Width = 131
+      Height = 34
       Caption = '(F5) Alterar pedido'
+      OptionsImage.ImageIndex = 3
+      OptionsImage.Images = Imagens
+      OptionsImage.Spacing = 7
+      TabOrder = 2
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
       ParentFont = False
-      ExplicitLeft = 269
-      ExplicitTop = 15
-      ExplicitWidth = 131
     end
-    inherited bt_Excluir: TcxButton
-      Left = 501
-      Top = 6
-      ExplicitLeft = 501
-      ExplicitTop = 6
-    end
-    inherited bt_Filtro: TcxButton
-      Left = 485
-      Top = 21
-      Visible = False
-      ExplicitLeft = 485
-      ExplicitTop = 21
-    end
-    inherited bt_Sair: TcxButton
-      Left = 656
+    object bt_Sair: TcxButton
+      Left = 678
       Top = 15
-      ExplicitLeft = 656
-      ExplicitTop = 15
+      Width = 83
+      Height = 34
+      Caption = '&Sair'
+      OptionsImage.ImageIndex = 4
+      OptionsImage.Images = Imagens
+      OptionsImage.Spacing = 7
+      TabOrder = 3
     end
-    inherited bt_Imprime: TcxButton
-      Left = 485
-      Visible = False
-      ExplicitLeft = 485
-    end
-    inherited bt_Cancelar: TcxButton
+    object bt_Cancelar: TcxButton
       Left = 141
       Top = 15
       Width = 122
+      Height = 34
       Caption = '(ESC) Cancelar'
-      ExplicitLeft = 141
-      ExplicitTop = 15
-      ExplicitWidth = 122
+      OptionsImage.Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE9E9F25C5C9D32328813
+        137A16167C3333895C5C9DE9E9F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF9F9FC715157C07159E081BB8091BCC0A1CD20A1CC00716A315157C9F9F
+        C7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9FC9030682081AAA0308BE0613BD06
+        11A40610A30716BE030AD00819B60306829F9FC9FFFFFFFFFFFFFFFFFFE9E9F4
+        15158508179F0000AA0715BF0308808B8BC8E1E1F08989C2121B8F040CBC0817
+        AB151585E9E9F4FFFFFFFFFFFF5C5CA80511970205960A1BAE0000BC050EC804
+        0888A4A4D9FFFFFFE8E8F312188D0206AB05109C5C5CA8FFFFFFFFFFFF33339A
+        05119108129C2022B50814B50000C7040DCB04088BA4A4DBFFFFFF8F8FC8040E
+        9605119A33339AFFFFFFFFFFFF11119109128C0B129AD3D3EE3132BB141FBE15
+        15CB141DC6090B8BA4A4DCE8E8F503098A040D90111191FFFFFFFFFFFF111195
+        3A43AA171E9CE7E7F5EAEAF73334BE4A52CE3737CC343AC4090B8C9898D70B10
+        8C161E93111196FFFFFFFFFFFF3333A5373EAF2B31A58B8BCDFFFFFFEAEAF737
+        38C05961CC4646C53A3FB805078621259A363BAC3333A5FFFFFFFFFFFF5C5CB8
+        252BAB5E60C21A1C98E9E9F5FFFFFFE9E9F73738C14E53C15353BE4448B14B4D
+        B4262BAA5C5CB8FFFFFFFFFFFFE9E9F61616A15A5DBF5457BF191B9B8D8DD1E4
+        E4F5CDCDEE2122BD464AB96161C05053B91616A1E9E9F6FFFFFFFFFFFFFFFFFF
+        9F9FDA1012A66D6FC97779D03737B01C1CA52325AE4649BC6F70CB6163C20A0B
+        A39F9FDAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9FDA1616AA4748BB7373CC8A
+        8AD88B8BD97676CD4242B91616A89F9FDAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFE9E9F75C5CC43434B72828B43434B63C3CBA5D5DC4E9E9F7FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      OptionsImage.ImageIndex = 7
+      OptionsImage.Images = Imagens
+      OptionsImage.Spacing = 7
+      TabOrder = 0
+      OnClick = bt_CancelarClick
     end
   end
-  inherited pc_Cadastro: TcxPageControl
-    Width = 775
-    Height = 430
-    ExplicitWidth = 775
-    ExplicitHeight = 430
-    ClientRectBottom = 426
-    ClientRectRight = 771
-    inherited tsPesquisa: TcxTabSheet
-      ExplicitWidth = 767
-      ExplicitHeight = 422
-    end
-    inherited tsCadastro: TcxTabSheet
+  object DBGrid2: TDBGrid
+    Left = 342
+    Top = 65
+    Width = 419
+    Height = 308
+    Ctl3D = False
+    DataSource = dsPedidoItem
+    DrawingStyle = gdsGradient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentCtl3D = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'COD_ITEM'
+        Title.Caption = 'Item'
+        Width = 28
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DESCRICAO'
+        Title.Caption = 'Produto'
+        Width = 212
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QTD'
+        Title.Caption = 'Qtd.'
+        Width = 43
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VR_UNITARIO'
+        Title.Caption = 'Valor Unit.'
+        Width = 58
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VR_BRUTO'
+        Title.Caption = 'Valor Bruto'
+        Width = 62
+        Visible = True
+      end>
+  end
+  object edCodigoProduto: TEdit
+    Left = 15
+    Top = 96
+    Width = 298
+    Height = 37
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clYellow
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    OnKeyDown = edCodigoProdutoKeyDown
+    OnKeyPress = edCodigoProdutoKeyPress
+  end
+  object EdQuantidade: TEdit
+    Left = 15
+    Top = 220
+    Width = 109
+    Height = 37
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clYellow
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object edValorTotal: TEdit
+    Left = 15
+    Top = 336
+    Width = 109
+    Height = 37
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clYellow
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 3
+    OnExit = edValorTotalExit
+  end
+  object edValorUnitario: TEdit
+    Left = 15
+    Top = 278
+    Width = 109
+    Height = 37
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clYellow
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    OnExit = edValorUnitarioExit
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 804
+    Height = 65
+    Align = alTop
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clMenuHighlight
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 5
+    ExplicitWidth = 767
+    object Label1: TLabel
+      Left = 15
+      Top = 11
+      Width = 146
+      Height = 45
+      Caption = 'PEDIDO:'
+      Color = clYellow
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clYellow
+      Font.Height = -32
+      Font.Name = 'Arial Black'
+      Font.Style = []
+      ParentColor = False
       ParentFont = False
-      ExplicitWidth = 767
-      ExplicitHeight = 422
-      object Label3: TLabel
-        Left = 15
-        Top = 77
-        Width = 129
-        Height = 13
-        Caption = 'C'#243'digo do Produto (F1)'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object lbDescProduto: TLabel
-        Left = 16
-        Top = 168
-        Width = 11
-        Height = 24
-        Caption = '_'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -20
-        Font.Name = 'Arial'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label5: TLabel
-        Left = 15
-        Top = 149
-        Width = 120
-        Height = 13
-        Caption = 'Descri'#231#227'o do Produto'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label6: TLabel
-        Left = 15
-        Top = 205
-        Width = 65
-        Height = 13
-        Caption = 'Quantidade'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label7: TLabel
-        Left = 16
-        Top = 264
-        Width = 77
-        Height = 13
-        Caption = 'Valor Unit'#225'rio'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Image1: TImage
-        Left = 167
-        Top = 224
-        Width = 146
-        Height = 149
-      end
-      object Label10: TLabel
-        Left = 15
-        Top = 322
-        Width = 61
-        Height = 13
-        Caption = 'Valor Total'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Panel1: TPanel
-        Left = 0
-        Top = 0
-        Width = 767
-        Height = 65
-        Align = alTop
-        Color = clBlack
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clMenuHighlight
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentBackground = False
-        ParentFont = False
-        TabOrder = 0
-        object Label1: TLabel
-          Left = 15
-          Top = 11
-          Width = 146
-          Height = 45
-          Caption = 'PEDIDO:'
-          Color = clYellow
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clYellow
-          Font.Height = -32
-          Font.Name = 'Arial Black'
-          Font.Style = []
-          ParentColor = False
-          ParentFont = False
-        end
-        object lbNumeroPedido: TLabel
-          Left = 167
-          Top = 11
-          Width = 126
-          Height = 45
-          Caption = '000000'
-          Color = clYellow
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clRed
-          Font.Height = -32
-          Font.Name = 'Arial Black'
-          Font.Style = []
-          ParentColor = False
-          ParentFont = False
-        end
-      end
-      object DBGrid2: TDBGrid
-        Left = 342
-        Top = 65
-        Width = 430
-        Height = 308
-        Ctl3D = False
-        DataSource = dsPedidoItem
-        DrawingStyle = gdsGradient
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentCtl3D = False
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 1
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'COD_ITEM'
-            Title.Caption = 'Item'
-            Width = 28
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'DESCRICAO'
-            Title.Caption = 'Produto'
-            Width = 212
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'QTD'
-            Title.Caption = 'Qtd.'
-            Width = 43
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'VR_UNITARIO'
-            Title.Caption = 'Valor Unit.'
-            Width = 58
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'VR_BRUTO'
-            Title.Caption = 'Valor Bruto'
-            Visible = True
-          end>
-      end
-      object edCodigoProduto: TEdit
-        Left = 15
-        Top = 96
-        Width = 298
-        Height = 37
-        Color = clBlack
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clYellow
-        Font.Height = -24
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 2
-        OnExit = edCodigoProdutoExit
-        OnKeyDown = edCodigoProdutoKeyDown
-        OnKeyPress = edCodigoProdutoKeyPress
-      end
-      object EdQuantidade: TEdit
-        Left = 15
-        Top = 220
-        Width = 109
-        Height = 37
-        Color = clBlack
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clYellow
-        Font.Height = -24
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 3
-        OnExit = EdQuantidadeExit
-      end
-      object edValorUnitario: TEdit
-        Left = 15
-        Top = 278
-        Width = 109
-        Height = 37
-        Color = clBlack
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clYellow
-        Font.Height = -24
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 4
-        OnExit = edValorUnitarioExit
-      end
-      object Panel2: TPanel
-        Left = 342
-        Top = 378
-        Width = 430
-        Height = 50
-        Color = clBackground
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentBackground = False
-        ParentFont = False
-        TabOrder = 5
-        object Label8: TLabel
-          Left = 12
-          Top = 6
-          Width = 149
-          Height = 33
-          Caption = 'SUB TOTAL'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clYellow
-          Font.Height = -24
-          Font.Name = 'Arial Black'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-        object lbSubTotal: TLabel
-          Left = 216
-          Top = 0
-          Width = 158
-          Height = 44
-          Caption = 'R$ 00,00'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clRed
-          Font.Height = -33
-          Font.Name = 'Arial Black'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-      end
-      object edValorTotal: TEdit
-        Left = 15
-        Top = 336
-        Width = 109
-        Height = 37
-        Color = clBlack
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clYellow
-        Font.Height = -24
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 6
-        OnExit = edValorTotalExit
-      end
+    end
+    object lbNumeroPedido: TLabel
+      Left = 167
+      Top = 11
+      Width = 126
+      Height = 45
+      Caption = '000000'
+      Color = clYellow
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -32
+      Font.Name = 'Arial Black'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
     end
   end
-  inherited MainTable: TFDQuery
+  object Panel2: TPanel
+    Left = 342
+    Top = 378
+    Width = 419
+    Height = 50
+    Color = clBackground
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 6
+    object Label8: TLabel
+      Left = 12
+      Top = 6
+      Width = 149
+      Height = 33
+      Caption = 'SUB TOTAL'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clYellow
+      Font.Height = -24
+      Font.Name = 'Arial Black'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lbSubTotal: TLabel
+      Left = 200
+      Top = 2
+      Width = 158
+      Height = 46
+      Caption = 'R$ 00,00'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -33
+      Font.Name = 'Arial Black'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object MainTable: TFDQuery
     AfterInsert = MainTableAfterInsert
+    CachedUpdates = True
+    Connection = DataModule_Library.Conexao
+    UpdateObject = upt_MainTable
     SQL.Strings = (
       'select *'
       'from pedidos')
     Left = 372
     Top = 200
   end
-  inherited DS_MainTable: TDataSource
+  object DS_MainTable: TDataSource
+    DataSet = MainTable
     Left = 372
     Top = 248
   end
-  inherited upt_MainTable: TFDUpdateSQL
+  object upt_MainTable: TFDUpdateSQL
+    Connection = DataModule_Library.Conexao
     InsertSQL.Strings = (
       'INSERT INTO PEDIDOS'
       '(COD_PEDIDO, COD_EMPRESA, COD_CLIENTE, RAZAO_SOCIAL, '
@@ -454,9 +483,52 @@ inherited frmPedido: TfrmPedido
     Left = 372
     Top = 304
   end
-  inherited Imagens: TImageList
+  object PopupMenu1: TPopupMenu
+    Images = Imagens
+    Left = 576
+    Top = 32
+    object Novo1: TMenuItem
+      Caption = '&Novo'
+      ImageIndex = 3
+      ShortCut = 45
+    end
+    object Altera1: TMenuItem
+      Caption = '&Altera'
+      ImageIndex = 1
+      ShortCut = 32781
+    end
+    object Exclui1: TMenuItem
+      Caption = '&Exclui'
+      ImageIndex = 0
+      ShortCut = 16430
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object Filtro1: TMenuItem
+      Caption = '&Filtro'
+      ImageIndex = 1
+      ShortCut = 16454
+    end
+    object Imprime1: TMenuItem
+      Caption = '&Imprime'
+      ImageIndex = 2
+      ShortCut = 16464
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object Sair1: TMenuItem
+      Caption = '&Sair'
+      ImageIndex = 2
+      ShortCut = 32883
+    end
+  end
+  object Imagens: TImageList
+    Left = 572
+    Top = 88
     Bitmap = {
-      494C010109009000F40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109009000F80010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000
@@ -858,6 +930,21 @@ inherited frmPedido: TfrmPedido
       0003E0078001C0000003C003F00FC00100038001F00FC00180070000F00FC003
       F03F0000F00FC007F87FFFFFF01FC00F00000000000000000000000000000000
       000000000000}
+  end
+  object FDPhysMSSQLDriverLink1: TFDPhysMSSQLDriverLink
+    Left = 572
+    Top = 160
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 572
+    Top = 232
+  end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    AllowDefault = False
+    Left = 568
+    Top = 296
   end
   object qryPedidoItem: TFDQuery
     BeforeInsert = qryPedidoItemBeforeInsert

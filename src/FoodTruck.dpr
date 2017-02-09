@@ -22,7 +22,9 @@ uses
   unRelatorioPedido in 'unRelatorioPedido.pas' {frmRelatorioPedido},
   unPesquisaProduto in 'unPesquisaProduto.pas' {frmPesquisaProduto},
   unPadraoPesquisas in 'Classes\unPadraoPesquisas.pas' {FrmPadraoPesquisas},
-  unPesquisaProdutoZ in 'unPesquisaProdutoZ.pas' {FrmPesquisaProdutoZ};
+  unPesquisaProdutoZ in 'unPesquisaProdutoZ.pas' {FrmPesquisaProdutoZ},
+  unPedidos in 'unPedidos.pas' {frmPedidos},
+  unDM_Relatorios in 'unDM_Relatorios.pas' {DM_Relatorios: TDataModule};
 
 {$R *.res}
 
@@ -31,6 +33,9 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDataModule_Library, DataModule_Library);
   Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TFrmPadraoPesquisas, FrmPadraoPesquisas);
   Application.CreateForm(TFrmPesquisaProdutoZ, FrmPesquisaProdutoZ);
+  Application.CreateForm(TDM_Relatorios, DM_Relatorios);
+  Application.CreateForm(TfrmRelatorioPedido, frmRelatorioPedido);
   Application.Run;
 end.

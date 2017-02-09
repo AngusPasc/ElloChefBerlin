@@ -34,9 +34,7 @@ type
     bt_Visualiza: TcxButton;
     bt_Sair: TcxButton;
     Imagens: TImageList;
-    Query: TFDQuery;
-    frxDataset: TfrxDBDataset;
-    procedure FormShow(Sender: TObject);
+    procedure bt_SairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,14 +48,12 @@ implementation
 
 {$R *.dfm}
 
-uses U_DataModule_Library;
+uses unDM_Relatorios;
 
-procedure TfrmPadraoRelatorio.FormShow(Sender: TObject);
+
+procedure TfrmPadraoRelatorio.bt_SairClick(Sender: TObject);
 begin
-    With DataModule_Library do
-    begin
-      Query.Connection.Name := Conexao.ConnectionName;
-    end;
+   Release;
 end;
 
 end.

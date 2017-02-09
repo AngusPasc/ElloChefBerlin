@@ -1,8 +1,8 @@
 object DataModule_Library: TDataModule_Library
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 324
-  Width = 678
+  Height = 313
+  Width = 784
   object Conexao: TFDConnection
     Params.Strings = (
       
@@ -282,7 +282,7 @@ object DataModule_Library: TDataModule_Library
   end
   object Q_CarregaScripts: TFDQuery
     Connection = Conexao
-    Left = 280
-    Top = 32
+    Left = 232
+    Top = 40
   end
 end

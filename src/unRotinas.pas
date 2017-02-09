@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Buttons, ToolWin, ComCtrls, Menus, DBGrids, Db, Extctrls, stdctrls, dbctrls,
   cxRadioGroup, cxDBEdit, cxCalendar, cxGrid, variants,ShellApi,ShlObj,FireDAC.Comp.Client,
-  FireDAC.Comp.DataSet, StrUtils, Tlhelp32;
+  FireDAC.Comp.DataSet, StrUtils, Tlhelp32, frxClass, frxDBSet;
 
 
 function Existe_Empresa : boolean;
@@ -15,10 +15,13 @@ function IncCodigo(campo, tabela : String) : String;
 function BuscaProduto(codigo : String) : String;
 function BuscaCodItem(CodPedido : integer) : integer;
 procedure listarArquivosDir(diretorio: string; lista: TStrings);
+procedure AbreForm(form:Tform);
+procedure CarregarRelatorio(const pReport : TFrxReport);
+function BuscaCaminhoEXE : String;
 
 implementation
 
-uses U_DataModule_Library;
+uses U_DataModule_Library, unPesquisaProdutoZ;
 
 function Existe_Empresa : boolean;
 begin
@@ -134,5 +137,27 @@ begin
       FindClose(search_rec);
     end;
 end;
+
+procedure AbreForm(form:TForm);
+begin
+    if Assigned(form) then
+    abort;
+
+    form := Tform.Create(nil);
+    form.ShowModal;
+    form.Release;
+end;
+
+procedure CarregarRelatorio(const pReport : TFrxReport);
+begin
+//  pReport.PrepareReport;
+//  pReport.ShowPrepareReport;
+end;
+
+function BuscaCaminhoEXE : String;
+begin
+   result := ExtractFilePath(Application.Exename);
+end;
+
 
 end.
