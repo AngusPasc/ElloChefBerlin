@@ -44,8 +44,7 @@ var
 
 implementation
 
-uses unRotinas, unEmpresa, unProduto, unPedido, unPedidos, unRelatorioPedido,
-  unRelPedidos;
+uses unRotinas, unEmpresa, unProduto, unPedidos, unRelatorioPedido;
 
 {$R *.dfm}
 
@@ -80,7 +79,7 @@ end;
 procedure TfrmMenu.Pedido1Click(Sender: TObject);
 begin
 //   AbreForm(frmRelPedidos);
-//    frmRelPedidos := TfrmRelPedidos.Create(nil);
+    frmRelatorioPedido := TfrmRelatorioPedido.Create(nil);
     frmRelatorioPedido.ShowModal;
     frmRelatorioPedido.Release;
 end;

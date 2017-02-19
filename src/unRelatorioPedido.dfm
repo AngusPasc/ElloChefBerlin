@@ -1,28 +1,37 @@
 inherited frmRelatorioPedido: TfrmRelatorioPedido
   Caption = 'Relat'#243'rio de Pedidos'
-  ClientHeight = 204
-  ExplicitHeight = 243
+  ClientHeight = 186
+  ClientWidth = 417
+  Position = poScreenCenter
+  ExplicitWidth = 433
+  ExplicitHeight = 225
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel [0]
     Left = 232
-    Top = 7
+    Top = 9
     Width = 53
     Height = 13
     Caption = 'Data Inicial'
   end
   object Label2: TLabel [1]
     Left = 312
-    Top = 7
+    Top = 9
     Width = 48
     Height = 13
     Caption = 'Data Final'
   end
   inherited pnBotoes: TPanel
-    Top = 140
+    Top = 122
+    Width = 417
+    TabOrder = 4
     ExplicitTop = 140
     inherited bt_Visualiza: TcxButton
       OnClick = bt_VisualizaClick
+    end
+    inherited bt_Sair: TcxButton
+      Left = 287
+      ExplicitLeft = 287
     end
   end
   object rgTipoRelatorio: TRadioGroup [3]
@@ -35,7 +44,7 @@ inherited frmRelatorioPedido: TfrmRelatorioPedido
     Items.Strings = (
       'Padr'#227'o'
       'Sint'#233'tico')
-    TabOrder = 1
+    TabOrder = 0
   end
   object edDataInicial: TMaskEdit [4]
     Left = 232
@@ -57,25 +66,25 @@ inherited frmRelatorioPedido: TfrmRelatorioPedido
     TabOrder = 3
     Text = '  /  /  '
   end
-  object RadioGroup1: TRadioGroup [6]
+  object rgSituacaoPedido: TRadioGroup [6]
     Left = 112
     Top = 8
     Width = 101
     Height = 95
     Caption = ' Situa'#231#227'o Pedido '
-    ItemIndex = 0
+    ItemIndex = 3
     Items.Strings = (
-      'Todos'
-      'Abertos'
       'Finalizados'
-      'Cancelados')
-    TabOrder = 4
+      'Abertos'
+      'Cancelados'
+      'Todos')
+    TabOrder = 1
   end
   inherited Imagens: TImageList
-    Left = 447
-    Top = 16
+    Left = 287
+    Top = 72
     Bitmap = {
-      494C01010B0090002C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B009000300110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000007CD65E0049BF210037B80C0037B80C0049BF210070CD51000000

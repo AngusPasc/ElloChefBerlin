@@ -26,7 +26,7 @@ object DM_Relatorios: TDM_Relatorios
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 42774.947181840300000000
-    ReportOptions.LastChange = 42774.956266956000000000
+    ReportOptions.LastChange = 42774.956266955990000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -108,7 +108,7 @@ object DM_Relatorios: TDM_Relatorios
       BottomMargin = 10.000000000000000000
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
-        Height = 151.181200000000000000
+        Height = 109.606370000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
@@ -124,36 +124,6 @@ object DM_Relatorios: TDM_Relatorios
           HAlign = haCenter
           Memo.UTF8W = (
             'Relat'#243'rio de Pedidos')
-          ParentFont = False
-        end
-        object Memo2: TfrxMemoView
-          Left = 3.779530000000000000
-          Top = 120.944960000000000000
-          Width = 98.267780000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          HAlign = haCenter
-          Memo.UTF8W = (
-            'C'#243'ddigo Pedido')
-          ParentFont = False
-        end
-        object Memo3: TfrxMemoView
-          Left = 117.165430000000000000
-          Top = 117.165430000000000000
-          Width = 98.267780000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          HAlign = haCenter
-          Memo.UTF8W = (
-            'C'#243'ddigo Pedido')
           ParentFont = False
         end
         object Page: TfrxMemoView
@@ -1124,21 +1094,37 @@ object DM_Relatorios: TDM_Relatorios
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
-        Height = 26.456710000000000000
-        Top = 230.551330000000000000
+        Height = 120.944960000000000000
+        Top = 188.976500000000000000
         Width = 718.110700000000000000
         DataSet = frxDataSetPedidos
         DataSetName = 'frxDataSetPedidos'
         RowCount = 0
+        object Memo2: TfrxMemoView
+          Left = 7.559060000000000000
+          Top = 11.338590000000010000
+          Width = 105.826840000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'C'#243'ddigo Pedido:')
+          ParentFont = False
+        end
         object frxDataSetPedidosCOD_PEDIDO: TfrxMemoView
-          Left = 3.779530000000000000
+          Left = 117.165430000000000000
+          Top = 11.338590000000010000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'COD_PEDIDO'
           DataSet = frxDataSetPedidos
           DataSetName = 'frxDataSetPedidos'
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
+          Font.Color = clRed
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = [fsBold]

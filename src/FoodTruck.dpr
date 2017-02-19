@@ -32,10 +32,10 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDataModule_Library, DataModule_Library);
+  Application.CreateForm(TDM_Relatorios, DM_Relatorios);
   Application.CreateForm(TfrmMenu, frmMenu);
   Application.CreateForm(TFrmPadraoPesquisas, FrmPadraoPesquisas);
   Application.CreateForm(TFrmPesquisaProdutoZ, FrmPesquisaProdutoZ);
-  Application.CreateForm(TDM_Relatorios, DM_Relatorios);
   Application.CreateForm(TfrmRelatorioPedido, frmRelatorioPedido);
   Application.Run;
 end.

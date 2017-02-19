@@ -35,8 +35,9 @@ type
     Label1: TLabel;
     edDataFinal: TMaskEdit;
     Label2: TLabel;
-    RadioGroup1: TRadioGroup;
+    rgSituacaoPedido: TRadioGroup;
     procedure bt_VisualizaClick(Sender: TObject);
+    procedure bt_SairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,17 +53,56 @@ implementation
 
 uses unDM_Relatorios, unRotinas;
 
+procedure TfrmRelatorioPedido.bt_SairClick(Sender: TObject);
+begin
+  inherited;
+  close;
+end;
+
 procedure TfrmRelatorioPedido.bt_VisualizaClick(Sender: TObject);
 begin
   inherited;
+
+  if (edDataInicial.Text = '  /  /  ') or (edDataFinal.Text = '  /  /  ') then
+  begin
+    MessageDlg('Informe as datas corretamente.', mtWarning, [mbOK], 0);
+    Abort;
+  end;
+
   with DM_Relatorios do
   begin
-    frxReportPedidos.LoadFromFile(BuscaCaminhoEXE + 'Relatorios\RelPedidosSimples.fr3');
-    qryPedidos.Close;
-    qryPedidos.SQL.Clear;
-    qryPedidos.SQL.Add('select * from pedidos');
-    qryPedidos.Open;
-    frxReportPedidos.ShowReport;
+
+    //Relatório Padrão de Pedidos
+    if (rgTipoRelatorio.ItemIndex = 0 ) then
+    begin
+      frxReportPedidos.LoadFromFile(BuscaCaminhoEXE + 'Relatorios\RelPedidosSimples.fr3');
+
+      qryPedidos.Close;
+      qryPedidos.SQL.Clear;
+      qryPedidos.SQL.Add('select * from pedidos');
+      qryPedidos.SQL.Add('where data between :dataini and :datafim');
+      qryPedidos.ParamByName('dataini').AsDate := StrToDate(edDataInicial.Text);
+      qryPedidos.ParamByName('datafim').AsDate := StrToDate(edDataFinal.Text);
+
+      if (rgSituacaoPedido.ItemIndex in [0,1,2] ) then
+      begin
+        qryPedidos.SQL.Add('and flag_situacao = :flag_situacao');
+        qryPedidos.ParamByName('flag_situacao').AsInteger := rgSituacaoPedido.ItemIndex;
+      end;
+
+      qryPedidos.SQL.Add('order by data, cod_pedido');
+      qryPedidos.Open;
+
+      if qryPedidos.IsEmpty then
+      begin
+        MessageDlg('Nenhuma informação encontrada.', mtWarning, [mbOK], 0);
+        Abort;
+      end;
+
+      frxReportPedidos.ShowReport;
+    end;
+
+
   end;
 end;
 
