@@ -285,4 +285,9 @@ object DataModule_Library: TDataModule_Library
     Left = 232
     Top = 40
   end
+  object QryExecutar: TFDQuery
+    Connection = Conexao
+    Left = 232
+    Top = 104
+  end
 end

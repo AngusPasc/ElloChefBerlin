@@ -44,11 +44,15 @@ type
     Default: TcxGridTableViewStyleSheet;
     Default2: TcxGridBandedTableViewStyleSheet;
     Q_CarregaScripts: TFDQuery;
+    QryExecutar: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    Transacao : TFDConnection;
+
+    procedure Executar(qry: TFDQuery; Sql: String);
   end;
 
 var
@@ -91,5 +95,32 @@ begin
 
 
 end;
+
+procedure TDataModule_Library.Executar(qry: TFDQuery; Sql: String);
+begin
+  IF NOT DataModule_Library.Conexao.InTransaction then
+  begin
+    Conexao.StartTransaction;
+    try
+      qry.Close;
+      qry.SQL.Text := Sql;
+      qry.Execute;
+      Conexao.CommitRetaining;
+    except
+      on E: Exception do
+      begin
+        Conexao.RollbackRetaining;
+        ShowMessage('Ocorreu um erro na finalização do processo. ');
+      end;
+    end;
+  end
+  else
+  begin
+    qry.Close;
+    qry.SQL.Text := Sql;
+    qry.Execute;
+  end;
+end;
+
 
 end.
